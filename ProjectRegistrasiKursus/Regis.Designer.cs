@@ -42,6 +42,8 @@
             checkBoxWeb = new CheckBox();
             checkBoxMobile = new CheckBox();
             checkBoxDesktop = new CheckBox();
+            label5 = new Label();
+            textBoxNama = new TextBox();
             groupBoxPilihanHari.SuspendLayout();
             SuspendLayout();
             // 
@@ -195,11 +197,30 @@
             checkBoxDesktop.UseVisualStyleBackColor = true;
             checkBoxDesktop.CheckedChanged += checkBoxDesktop_CheckedChanged;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(32, 54);
+            label5.Margin = new Padding(5, 0, 5, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(77, 31);
+            label5.TabIndex = 14;
+            label5.Text = "Nama";
+            // 
+            // textBoxNama
+            // 
+            textBoxNama.Location = new Point(377, 54);
+            textBoxNama.Name = "textBoxNama";
+            textBoxNama.Size = new Size(322, 38);
+            textBoxNama.TabIndex = 15;
+            // 
             // Regis
             // 
             AutoScaleDimensions = new SizeF(14F, 31F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1596, 610);
+            Controls.Add(textBoxNama);
+            Controls.Add(label5);
             Controls.Add(checkBoxDesktop);
             Controls.Add(checkBoxMobile);
             Controls.Add(checkBoxWeb);
@@ -237,5 +258,7 @@
         private CheckBox checkBoxWeb;
         private CheckBox checkBoxMobile;
         private CheckBox checkBoxDesktop;
+        private Label label5;
+        private TextBox textBoxNama;
     }
 }

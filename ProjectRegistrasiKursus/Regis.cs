@@ -12,14 +12,22 @@ namespace ProjectRegistrasiKursus
 {
     public partial class Regis : Form
     {
+
         String bahasaPemrograman;
         String hariKursus;
         List<String> skill = new List<string>();
+        int id;
+        string nama;
+        List<Peserta> listPeserta = new List<Peserta>();
+
         public Regis()
         {
             InitializeComponent();
             bahasaPemrograman = "";
             hariKursus = "";
+            id = 0;
+            nama = "";
+
         }
 
         private void comboBoxBahasaPemrograman_SelectedValueChanged(object sender, EventArgs e)
@@ -29,14 +37,21 @@ namespace ProjectRegistrasiKursus
 
         private void buttonDaftar_Click(object sender, EventArgs e)
         {
+            //membuat objek peserta
+            id++;
+            nama = textBoxNama.Text;
+            Peserta peserta = new Peserta(id,nama,bahasaPemrograman,hariKursus,skill);
+            //menambahkan objek peserta ke dalam listPeserta
+            listPeserta.Add(peserta);
             //menampilkan hasil isian form ke richtextbox
             richTextBoxHasil.AppendText("Anda sudah melakukan registrasi dengan rincian sebagai berikut:\n");
+            richTextBoxHasil.AppendText("Nama :" + nama + "\n");
             richTextBoxHasil.AppendText("Bahasa Pemrograman :" + bahasaPemrograman + "\n");
-            richTextBoxHasil.AppendText("Hari Kursus :" + hariKursus+"\n");
+            richTextBoxHasil.AppendText("Hari Kursus :" + hariKursus + "\n");
             richTextBoxHasil.AppendText("Pilihan Skill:\n");
             foreach (String valSkill in skill)
             {
-                richTextBoxHasil.AppendText(valSkill.ToString()+"\n");
+                richTextBoxHasil.AppendText(valSkill.ToString() + "\n");
             }
         }
 
